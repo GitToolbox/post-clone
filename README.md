@@ -56,28 +56,26 @@ function get_git_root()
 
     IFS=' ' read -r -a array <<< "$@"
 
-    if [[ ${#array[@]} == 1 ]]; then
-        repo=${array[0]}
-        repo=${repo##*/}
-        repo=${repo%%.*}
-    else
-        repo=${array[1]}
-    fi
+    repo=${array[-1]}
+    repo=${repo##*/}
+    repo=${repo%%.*}
     realpath "${repo}"
-    echo "${repo}"
 }
 
 function main()
 {
-   if [[ $1 == "clone" ]]; then
-      shift
-      command git clone "$@"
+    if [[ $1 == "clone" ]]; then
+        shift
 
-      root=$(get_git_root "$@")
-      command "post-checkout" "${root}"
-   else
-      command git "$@";
-   fi;
+        if command git clone "$@"; then
+            root=$(get_git_root "$@")
+            if [[ -d "${root}" ]]; then
+                command post-clone "$root"
+            fi
+        fi
+     else
+        command git "$@";
+     fi
 }
 
 main "$@"

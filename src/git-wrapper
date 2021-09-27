@@ -6,13 +6,9 @@ function get_git_root()
 
     IFS=' ' read -r -a array <<< "$@"
 
-    if [[ ${#array[@]} == 1 ]]; then
-        repo=${array[0]}
-        repo=${repo##*/}
-        repo=${repo%%.*}
-    else
-        repo=${array[1]}
-    fi
+    repo=${array[-1]}
+    repo=${repo##*/}
+    repo=${repo%%.*}
     realpath "${repo}"
 }
 
