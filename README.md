@@ -37,6 +37,59 @@
 
 ## Overview
 
+Add a bash override for git (.bash_profile, .bashrc or .bash_aliases)
+
+```shell
+function git()
+{
+    command $HOME/templates/cloner "$@"
+}
+```
+
+The cloner
+```shell
+#!/usr/bin/env bash
+
+function get_git_root()
+{
+    local repo
+
+    IFS=' ' read -r -a array <<< "$@"
+
+    if [[ ${#array[@]} == 1 ]]; then
+        repo=${array[0]}
+        repo=${repo##*/}
+        repo=${repo%%.*}
+    else
+        repo=${array[1]}
+    fi
+    repo=$(realpath "${repo}")
+    echo "${repo}"
+}
+
+function main()
+{
+   if [[ $1 == "clone" ]]; then
+      shift
+      command git clone "$@"
+
+      root=$(get_git_root "$@")
+      command "${HOME}/templates/hooks/post-checkout" "$root"
+   else
+      command git "$@";
+   fi;
+}
+
+main "$@"
+```
+
+The post-clone
+```shell
+#!/usr/bin/env bash
+
+cd $1
+echo $PWD
+```
 
 ## Show Support
 
