@@ -42,7 +42,7 @@ Add a bash override for git (.bash_profile, .bashrc or .bash_aliases)
 ```shell
 function git()
 {
-    command $HOME/templates/cloner "$@"
+    command git-wrapper "$@"
 }
 ```
 
@@ -63,7 +63,7 @@ function get_git_root()
     else
         repo=${array[1]}
     fi
-    repo=$(realpath "${repo}")
+    realpath "${repo}"
     echo "${repo}"
 }
 
@@ -74,7 +74,7 @@ function main()
       command git clone "$@"
 
       root=$(get_git_root "$@")
-      command "${HOME}/templates/hooks/post-checkout" "$root"
+      command "post-checkout" "${root}"
    else
       command git "$@";
    fi;
