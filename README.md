@@ -1,37 +1,33 @@
-<h1 align="center">
-    <a href="https://github.com/WolfSoftware">
-        <img src="https://raw.githubusercontent.com/WolfSoftware/branding/master/images/general/banners/64/black-and-white.png" alt="Wolf Software Logo" />
+<p align="center">
+    <a href="https://github.com/GitToolbox/">
+        <img src="https://cdn.wolfsoftware.com/assets/images/github/organisations/gittoolbox/black-and-white-circle-256.png" alt="GitToolbox logo" />
     </a>
     <br />
-    Post Clone Git Hook
-</h1>
-
-<p align="center">
     <a href="https://github.com/GitToolbox/post-clone/actions/workflows/pipeline.yml">
-        <img src="https://img.shields.io/github/workflow/status/GitToolbox/post-clone/pipeline/master?logo=github&logoColor=white&style=for-the-badge" alt="Github Build Status">
+        <img src="https://img.shields.io/github/workflow/status/GitToolbox/post-clone/pipeline/master?style=for-the-badge" alt="Github Build Status">
     </a>
     <a href="https://github.com/GitToolbox/post-clone/releases/latest">
-        <img src="https://img.shields.io/github/v/release/GitToolbox/post-clone?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
+        <img src="https://img.shields.io/github/v/release/GitToolbox/post-clone?color=blue&label=Latest%20Release&style=for-the-badge" alt="Release">
     </a>
     <a href="https://github.com/GitToolbox/post-clone/releases/latest">
-        <img src="https://img.shields.io/github/commits-since/GitToolbox/post-clone/latest.svg?color=blue&style=for-the-badge&logo=github&logoColor=white" alt="Commits since release">
+        <img src="https://img.shields.io/github/commits-since/GitToolbox/post-clone/latest.svg?color=blue&style=for-the-badge" alt="Commits since release">
     </a>
     <br />
     <a href=".github/CODE_OF_CONDUCT.md">
-        <img src="https://img.shields.io/badge/Code%20of%20Conduct-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+        <img src="https://img.shields.io/badge/Code%20of%20Conduct-blue?style=for-the-badge" />
     </a>
     <a href=".github/CONTRIBUTING.md">
-        <img src="https://img.shields.io/badge/Contributing-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+        <img src="https://img.shields.io/badge/Contributing-blue?style=for-the-badge" />
     </a>
     <a href=".github/SECURITY.md">
-        <img src="https://img.shields.io/badge/Report%20Security%20Concern-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+        <img src="https://img.shields.io/badge/Report%20Security%20Concern-blue?style=for-the-badge" />
     </a>
     <a href="https://github.com/GitToolbox/post-clone/issues">
-        <img src="https://img.shields.io/badge/Get%20Support-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+        <img src="https://img.shields.io/badge/Get%20Support-blue?style=for-the-badge" />
     </a>
     <br />
-    <a href="https://github.com/TGWolf">
-        <img src="https://img.shields.io/badge/Created%20by%20Wolf-black?style=for-the-badge" />
+    <a href="https://wolfsoftware.com/">
+        <img src="https://img.shields.io/badge/Created%20by%20Wolf%20Software-blue?style=for-the-badge" />
     </a>
 </p>
 
@@ -88,11 +84,3 @@ The post-clone
 cd $1
 echo $PWD
 ```
-
-## Show Support
-
-<p>
-	<a href="https://ko-fi.com/wolfsoftware">
-		<img src="https://img.shields.io/badge/Ko%20Fi-blue?style=for-the-badge&logo=ko-fi&logoColor=white" />
-	</a>
-</p>

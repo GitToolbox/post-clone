@@ -14,15 +14,18 @@ function get_git_root()
 
 function main()
 {
-   if [[ $1 == "clone" ]]; then
-      shift
-      command git clone "$@"
+    if [[ $1 == "clone" ]]; then
+        shift
 
-      root=$(get_git_root "$@")
-      command post-clone "$root"
-   else
-      command git "$@";
-   fi;
+        if command git clone "$@"; then
+            root=$(get_git_root "$@")
+            if [[ -d "${root}" ]]; then
+                command post-clone "$root"
+            fi
+        fi
+     else
+        command git "$@";
+     fi
 }
 
 main "$@"
