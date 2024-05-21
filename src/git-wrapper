@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+function get_git_root()
+{
+    local repo
+
+    IFS=' ' read -r -a array <<< "$@"
+
+    repo=${array[-1]}
+    repo=${repo##*/}
+    repo=${repo%%.*}
+    realpath "${repo}"
+}
+
+function main()
+{
+    if [[ $1 == "clone" ]]; then
+        shift
+
+        if command git clone "$@"; then
+            root=$(get_git_root "$@")
+            if [[ -d "${root}" ]]; then
+                command post-clone "$root"
+            fi
+        fi
+     else
+        command git "$@";
+     fi
+}
+
+main "$@"
